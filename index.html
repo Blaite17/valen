@@ -11,16 +11,21 @@
         <h1>Will You Be My Valentine? ❤️</h1>
         <p>You're the most special person in my life, and I can't imagine this day without you!</p>
         <div class="buttons">
-            <a href="sms:09078266081?body=Yes!%20I%20will%20be%20your%20Valentine!%20💖" class="yes">Yes! 💖</a>
-            <a href="sms:09078266081?body=No%20😢" class="no" onmouseover="moveNoButton()">No 😢</a>
+            <button class="yes" onclick="showMessage('YES')">Yes! 💖</button>
+            <button class="no" onmouseover="moveNoButton()">No 😢</button>
         </div>
+        <p id="response"></p>
     </div>
 
     <script>
+        function showMessage(answer) {
+            document.getElementById("response").innerHTML = "Yay! I love you! 💕";
+        }
+
         function moveNoButton() {
             let button = document.querySelector(".no");
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 100);
+            let x = Math.random() * window.innerWidth * 0.6;
+            let y = Math.random() * window.innerHeight * 0.6;
             button.style.position = "absolute";
             button.style.left = `${x}px`;
             button.style.top = `${y}px`;
